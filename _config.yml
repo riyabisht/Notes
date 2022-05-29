@@ -1,6 +1,6 @@
 title: Notes
 description: My personal notes on computer science
-baseurl: "/Notes"
+baseurl: "Notes"
 url: "https://riyabisht.github.io/" 
 
 remote_theme: just-the-docs/just-the-docs
@@ -9,8 +9,6 @@ permalink: pretty
 exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile"
 , "docs/tests/"
 ]
-
-color_scheme: bigfont
 
 # Set a path/url to a logo that will be displayed instead of the title
 # logo: "/img/logo.jpg"
@@ -81,7 +79,7 @@ gh_edit_branch: "master" # the branch that your docs is served from
 gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
 
 # Color scheme currently only supports "dark", "light"/nil (default), or a custom scheme that you define
-color_scheme: nil
+color_scheme: bigfont
 
 # Google Analytics Tracking (optional)
 # e.g, UA-1234567-89
