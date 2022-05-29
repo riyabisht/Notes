@@ -6,8 +6,8 @@ parent: Competitive Programming
 
 # Bit manipulation
 
-1. Table of Contents
-   {:toc}
+1. TOC
+{:toc}
 
 Bit manipulation refers to changing the bit of the binary number.
 

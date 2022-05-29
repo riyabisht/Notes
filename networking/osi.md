@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Networking
+title: OSI MOdel
 nav_order: 2
 parent: Networking
 ---

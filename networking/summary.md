@@ -4,8 +4,18 @@ title: Summary
 parent: Networking
 ---
 
+# Summary of Networking
+
+{: .no_toc }
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
 1. TOC
-   {:toc}
+{:toc}
+</details>
 
 # what is internet
 
