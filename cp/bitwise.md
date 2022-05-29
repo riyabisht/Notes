@@ -1,3 +1,8 @@
+---
+layout: default
+title: Bit Manipulation
+parent: Competitive Programming
+---
 
 # Bit manipulation
 

@@ -1,7 +1,8 @@
 ---
 layout: default
-title: CP
+title: Competitive Programming
 nav_order: 2
+has_children: true
 ---
 
 # Competitive Programming
