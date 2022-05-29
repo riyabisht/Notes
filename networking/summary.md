@@ -268,7 +268,6 @@ $$
 - **data link**
 - **physical**
 
-[osi]('./img/osi.jpg') {: width="400px" }
-[osi]('./img/osi-tcp.jpg') {: width="500px" }
-[osi]('./img/tcp-ip-protocol.jpg') {: width="500px" }
-
+![osi](./img/osi.jpg) {: width="400px" }
+![osi](./img/osi-tcp.jpg) {: width="500px" }
+![osi](./img/tcp-ip-protocol.jpg) {: width="500px" }
