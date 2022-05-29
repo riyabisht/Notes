@@ -1,5 +1,11 @@
 # Hi! 👋
 
+<center>
+
+<img src="./img/logo.jpg" height="300px">
+
+</center>
+
 This is a site for my personal notes on computer science, competitive programming,
 and other tech related things.
 
