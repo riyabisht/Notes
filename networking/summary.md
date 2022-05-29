@@ -268,9 +268,7 @@ $$
 - **data link**
 - **physical**
 
-<img src='./img/osi.jpg' alt='osi' width="400px">
-
-<img src='./img/osi-tcp.jpg' alt='osi' width="500px">
-
-<img src='./img/tcp-ip-protocol.jpg' alt='osi' width="500px">
+[osi]('./img/osi.jpg') {: width="400px" }
+[osi]('./img/osi-tcp.jpg') {: width="500px" }
+[osi]('./img/tcp-ip-protocol.jpg') {: width="500px" }
 
