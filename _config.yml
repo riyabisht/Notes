@@ -90,6 +90,7 @@ plugins:
   - jekyll-seo-tag
 
 kramdown:
+  math_engine: katex
   syntax_highlighter_opts:
     block:
       line_numbers: false
