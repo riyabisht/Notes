@@ -1,15 +1,4 @@
 {% if page.mathjax %}
-  <!-- <script type="text/x-mathjax-config">
-    {{ site.mathjax.config }};
-    MathJax.Hub.Config(
-      { 
-        TeX: {  
-          inlineMath: [['$', '$'], ['\\(', '\\)']], 
-          equationNumbers: { autoNumber: "AMS" } 
-        } 
-      }
-    );
-  </script> -->
   <script>
     MathJax = {
       tex: {
@@ -20,8 +9,8 @@
       }
     };
   </script>
-  <script type="text/javascript" async 
-    src="{{ site.mathjax.source }}">
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
   </script>
 {% endif %}
 <style>
