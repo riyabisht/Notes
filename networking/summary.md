@@ -2,6 +2,7 @@
 layout: default
 title: Summary
 parent: Networking
+mathjax: true
 ---
 
 # Summary of Networking
