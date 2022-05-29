@@ -1,6 +1,6 @@
 {% if page.mathjax %}
-  <script type="text/x-mathjax-config">
-    <!-- site.mathjax.config }}; -->
+  <!-- <script type="text/x-mathjax-config">
+    {{ site.mathjax.config }};
     MathJax.Hub.Config(
       { 
         TeX: {  
@@ -8,7 +8,17 @@
           equationNumbers: { autoNumber: "AMS" } 
         } 
       }
-    )
+    );
+  </script> -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
   </script>
   <script type="text/javascript" async 
     src="{{ site.mathjax.source }}">
