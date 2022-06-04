@@ -19,7 +19,7 @@ Forwarding Table
 which that packet is to be forwarded. 
 - Depending network-layer protocol,the header value could be the destination address or an indication of connection to which the packet belongs.
 
-<img src="./img/networkLayer/routing.png" width="300px" />
+<img src="img/networkLayer/routing.png" width="300px" />
 
 
 
