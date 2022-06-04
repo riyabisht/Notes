@@ -184,8 +184,9 @@ _**Protocol**_
 - IP address 193.32.216.9 - 8bit.8bit.8bit.8bit
 - each interface of router and host have unique IP address
 
-_subnet_ - interconnecting 3 host interface (fig 4.15)
-_subnet mask_
+**_subnet_**- interconnecting 3 host interface (fig 4.15)
+
+**_subnet mask_**
 - IP addressing assigns an address to this
 subnet: 223.1.1.0/24, where the /24 notation, sometimes known as a `subnet mask`
 - The subnet 223.1.1.0/24 consists of three host interfaces :
@@ -197,23 +198,78 @@ one router interface :(223.1.1.4).
 
 **_CIDR_**
 internet's address assignment strategy is known as `Classless Interdomain Routing`
-- _a.b.c.d/x_ 
-_x_ : no of bits in first part of address
+_a.b.c.d/x_ <br>
+_x_ : no of bits in first part of address <br>
 _x_ most significant bits referred as **_prefix_**
 
->organisation assigned a range of address with comman prefix.IP address of devices within the organisation share comman prefix.
+organisation assigned a range of address with comman prefix.IP address of devices within the organisation share comman prefix.
 
 **_classful addressing_**
-before CIDR was adopted,network portions of an IP address were constrained to be 8, 16, or 24 bits in length
-8 - class A
-16- class B
-24- class C
-subnet portion : 1,2,3 bits long
+before CIDR was adopted,network portions of an IP address were constrained to be 8, 16, or 24 bits in length<br>
+8 - class A <br>
+16- class B <br>
+24- class C <br>
+subnet portion : 1,2,3 bits long <br>
 class C (/24) subnet could accommodate only up to 2^8 – 2 = 254 hosts
 
 **_broadcast address_**
+
 IP broadcast address 255.255.255.255.
 When a host sends a datagram with destination address 255.255.255.255, the message is delivered to all hosts on the same subnet.
 
-**how range of ip address is obtain**
+### **how range of ip address is obtain**
 
+- network admin contact ISP
+- IP address are managed under the authority of  ICANN (Internet Corporation for Assigned Name and numbers)
+- ICANN - assign ip adress as well as manage DNS servers
+
+### **Obtaning a Host Address: The Dynamic Host Configuration Protocol**
+
+- once organization got addresses, it assign to host and routers interface
+- `DHPC`allows a host to obtain IP address automatically
+- network admin can configure DHCP so that given host receives the same IP address each time it connect to the network
+- or host may assign _temporary IP address_ , it will be different each time host connect to network
+- DHCP allows host to learn info such as its <br>
+    - subnet mask , 
+    - the address of its first top router(default gateway) 
+    - address of local DNS server
+- also refer as **plug play protocol** : ability to automate network-related aspects of connecting host into a network
+- used in residential Internet access network , host join and leaves network frequently
+- DHCP is ideally suited for the situation where many users are coming and going and addresses are needed for limited amount of time
+- DHCP is a client server protocol
+- each subnet has a DHCP server.If no server present on the subnet
+- DHPC relay agent that knows the address of DHPC server
+-  
+
+![DHPC](img/networkLayer/DHPC.png)
+
+### **DHPC is a 4 step process**
+
+![process](img/networkLayer/DHPC_process.png)
+
+**DHPC server discovery**
+- First message is generated the communication between server and client
+- message sent by client in-order to discover whether any DHPC server is present or not
+- message is broadcasted
+
+**DHPC server offers**
+- server respond to host in this message specifying unleashed Ip address and other TCP info
+- message is broadcasted by server
+- size of message 342 bytes
+- if more than one DHPC server present client accept first DHCP offer message it receive
+- serve Id is specified in the packet 
+
+**DHPC request**
+- the newly arrive client will chose from among on or more offers and respond to selected offer with DHCP request message
+- echoing back config parameters
+
+**DHPC ACK**
+- server respond to DHCP request message with DHPC ACK message , confirming request parameters
+
+Once client revives DHCP ACK interaction in complete
+client can use DHCP-allocated IP address for the lease duration
+
+### Shortcoming
+
+- new IP address is obtain from DHCP each time connect to new subnet
+TCP connection to a remote app can be maintained as mobile node moves between subnets
