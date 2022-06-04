@@ -42,8 +42,97 @@ which that packet is to be forwarded.
 
 
 _Note : connection oriented service in transport layer different from network layer connection system_
- 
 
+![vc](img/networkLayer/vc.png)
+![datagram](img/networkLayer/datagram.png)
 
+## Internal of a Router
 
+**Function of router**
+- **forwarding**
+- **routing**
 
+![router](img/networkLayer/routerArchitecture.png)
+
+**Input ports**
+- packets are admitted into the router
+- terminate physical link layer at the router
+- lookup function performed at input port
+    - forwarding table consulted here to determine which output port for incoming packets
+
+**Switching fabric**
+- connects the router's input ports to its output ports.
+- completely contained within the router
+- its like network inside a network router
+
+**Output ports** 
+- stores packets received from switching fabric
+- and transmits to out going layer by performing link-layer and physical-layer function
+
+**Routing processor**
+- execute routing protocols
+- maintains routing tables 
+- computes the forward table for router
+- perform network management functions
+
+## Switching
+
+ways to do switching(forwarding)
+- Switching via memory
+- Switching via bus
+- Switching via interconnection network
+
+## IP : Forwarding and addressing in the Internet
+
+3 major component of Internet's network layer
+- IP protocol
+- routing 
+- facility to report errors
+
+_network layer packet is referred as datagram
+
+**syntax and semantics of IPv4 datagram format**
+
+![ipv4 format](img/networkLayer/ipv4format.png)
+
+_**Version number**_
+- 4 bit, IP protocol version of datagram
+- helps router to determine how to interpret reminder of IP datagram
+- different version of IP use different datagram format
+
+_**Header length**_
+- 20 byte header, determine where in IP datagram the data actually begin
+
+_**Type of service**_
+- allow different type of IP datagram(_eg real time datagram , non-real time datagram_ )
+
+- **_Data gram length_**
+- total length of IP datagram(header+data)
+- 16 bits 
+
+_**Identifier,flags,fragmentation offset**_
+- deal with IP fragmentation 
+- IPv6 dosen't allow for fragmentation at routers
+
+_**Time-to-live**_
+- ensure that datagram do not circulate forever in network
+- decremented by 1 each time datagram is processed by a router
+- 0 TTL - datagram must be drop
+
+_**Protocol**_
+- used when datagram reaches destination
+- protocol number indicate the specific transport-layer protocol to which the data portion of this datagram should be passed
+- eg: 6-TCP,17-UDP
+- binds network and transport layer
+
+**_Header checksum_**
+- detect bit errors in recived IP datagram
+- if checksum carried by datagram != computed checksum then router display _discard datagram_
+
+**_Source and destination IP address_**
+
+**_options_**
+- allow ip header to be extended
+
+**_Data_**
+- contains transport layer segment (TCP or UDP or ICMP massages )
