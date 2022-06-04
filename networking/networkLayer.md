@@ -1,6 +1,6 @@
 ---
 layout: default
-title: OSI Model
+title: Network Layer
 nav_order: 2
 parent: Networking
 ---
