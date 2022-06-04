@@ -112,7 +112,7 @@ _**Type of service**_
 
 _**Identifier,flags,fragmentation offset**_
 - deal with IP fragmentation 
-- IPv6 dosen't allow for fragmentation at routers
+- IPv6 doesn't allow for fragmentation at routers
 
 _**Time-to-live**_
 - ensure that datagram do not circulate forever in network
@@ -126,7 +126,7 @@ _**Protocol**_
 - binds network and transport layer
 
 **_Header checksum_**
-- detect bit errors in recived IP datagram
+- detect bit errors in received IP datagram
 - if checksum carried by datagram != computed checksum then router display _discard datagram_
 
 **_Source and destination IP address_**
@@ -136,3 +136,43 @@ _**Protocol**_
 
 **_Data_**
 - contains transport layer segment (TCP or UDP or ICMP massages )
+
+## IP Datagram Fragmentation
+
+- some protocol carry big gram some carry small datagrams
+- that is different protocol has different _maximum transmission unit_.
+
+**what cause data fragmentation ?**
+- each links along the route between sender, destination can use different link-layer protocol
+- and each of these link can have different `MTU`
+- eg: router receive an IP datagram from one link- check forwarding table choose the outgoing link , and find that `MTU` of this link is smaller than length of IP datagram.
+
+**fragmentation** 
+- Fragment data in IP datagram into two or more smaller ip datagram, 
+- encapsulate each of these smaller IP datagram in a separate link-layer frame
+- send these frame over outgoing link
+- each of these smaller datagram is referred as _fragment_
+
+**points**
+- fragments needs to reassemble before reaching transport layer at destination
+- destination host reassembles the fragments
+- destination host examine the(_identification flag , fragmentation offset_) identification number of datagrams stamped by sending host
+- IP is unreliable - one or more fragment won't arrive at destination
+- so , last fragment is flag=0,other marked as flag =1 
+- if more that one or more doesn't arrive, incomplete datagram is discarded
+- TCP will recover this loss by retransmitting data by source
+
+**drawback**
+- complicate routers and end system
+- can be used to create lethal DoS attacks, hacker send series of unexpected fragments eg:_Jolt2 attack_
+-  
+
+![fragmentation](img/networkLayer/fragmentation.png)
+
+![fragment table](img/networkLayer/IpfragmentTabel.png)
+
+## IPv4 Addressing
+
+**interface**
+
+
