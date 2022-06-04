@@ -106,7 +106,7 @@ _**Header length**_
 _**Type of service**_
 - allow different type of IP datagram(_eg real time datagram , non-real time datagram_ )
 
-- **_Data gram length_**
+ **_Data gram length_**
 - total length of IP datagram(header+data)
 - 16 bits 
 
@@ -174,5 +174,46 @@ _**Protocol**_
 ## IPv4 Addressing
 
 **interface**
+- The boundary between the router and any of its link 
+- router have multiple links therefore have multiple interface
+- every router and host, receiving and sending datagram, therefore every interface should have IP address.
 
+**IP Address**
+- 32 bit long(4 bytes) - 2^32 possible ip address - 4billion
+- written dotted-decimal-notation
+- IP address 193.32.216.9 - 8bit.8bit.8bit.8bit
+- each interface of router and host have unique IP address
+
+_subnet_ - interconnecting 3 host interface (fig 4.15)
+_subnet mask_
+- IP addressing assigns an address to this
+subnet: 223.1.1.0/24, where the /24 notation, sometimes known as a `subnet mask`
+- The subnet 223.1.1.0/24 consists of three host interfaces :
+(223.1.1.1, 223.1.1.2, and 223.1.1.3) <br>
+one router interface :(223.1.1.4).
+
+![subnet](img/networkLayer/subnet1.png)
+![subnet](img/networkLayer/subnet2.png)
+
+**_CIDR_**
+internet's address assignment strategy is known as `Classless Interdomain Routing`
+- _a.b.c.d/x_ 
+_x_ : no of bits in first part of address
+_x_ most significant bits referred as **_prefix_**
+
+>organisation assigned a range of address with comman prefix.IP address of devices within the organisation share comman prefix.
+
+**_classful addressing_**
+before CIDR was adopted,network portions of an IP address were constrained to be 8, 16, or 24 bits in length
+8 - class A
+16- class B
+24- class C
+subnet portion : 1,2,3 bits long
+class C (/24) subnet could accommodate only up to 2^8 – 2 = 254 hosts
+
+**_broadcast address_**
+IP broadcast address 255.255.255.255.
+When a host sends a datagram with destination address 255.255.255.255, the message is delivered to all hosts on the same subnet.
+
+**how range of ip address is obtain**
 
