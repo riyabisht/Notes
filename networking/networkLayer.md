@@ -1,11 +1,23 @@
 ---
 layout: default
 title: Network Layer
+mathjax: true
 nav_order: 2
 parent: Networking
 ---
 
 # Unit 5 Network Layer 
+
+{: .no_toc }
+
+<details open markdown="block">
+  <summary>
+    Outline
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 Switches - link layer devices
 Routes - network layer devices 
