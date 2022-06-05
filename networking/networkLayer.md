@@ -86,8 +86,8 @@ ways to do switching(forwarding)
 
 3 major component of Internet's network layer
 - IP protocol
-- routing 
-- facility to report errors
+- routing protocol
+- facility to report errors, ICMP
 
 _network layer packet is referred as datagram
 
@@ -273,3 +273,107 @@ client can use DHCP-allocated IP address for the lease duration
 
 - new IP address is obtain from DHCP each time connect to new subnet
 TCP connection to a remote app can be maintained as mobile node moves between subnets
+
+## Network Address Translation (NAT)
+
+- IT's a way to map multiple local private addresses to public before transferring the information
+- Organization that want multiple devices to employ single ip address use NAT 
+- eg: home routers
+- let say ,request made in web from your laptop , request send to router in form of packet.
+- router changes outgoing private local ip address to public address.
+- because the receiving server won't know where to send information back. As device iP is private local .
+- NAT behaves like a single device with a single ip , for outside world
+
+![nat](img/networkLayer/nat.png)
+
+**how home network devices get the ip address**
+- NAT router get ip address from ISP's DHCP server 
+- router runs DHCP server to provide addresses to computers within NAT-DHCP-router-controlled home network's address space
+
+**NAT Table**
+- use to tell where/which host to forward given datagram 
+**security**
+- `NAT` hiding details of home network from outside world
+
+**NAT face agues**
+- port numbers are meant to be used for addressing processes, not for
+addressing hosts
+- routers
+are supposed to process packets only up to layer 3
+- NAT
+protocol violates the so-called end-to-end argument
+- we should use IPv6 to
+solve the shortage of IP addresses, rather than recklessly patching up the problem
+with a stopgap solution like NAT
+
+**problem with NAT in P2P application**
+- P2P app : participating Peer A should be able to initiate TCP connection with other peer B
+- problem is Peer B is behind NAT, it can't act as server and accept TCP connection
+- this NAT problem can be circumvented if Peer A is not behind a NAT
+- Peer A can first contact PeerB through an intermediate Peer C, which is not behind a NAT and to which B has
+established an ongoing TCP connection.
+- Peer A can then ask Peer B, via Peer C, to initiate a TCP connection directly back to Peer A.
+- Once the direct P2P TCP connection is established between Peers A and B, the two peers can exchange messages or
+files. This hack, called connection reversal
+- 
+
+### **UPnP Universal Plug and Play**
+- which is
+a protocol that allows a host to discover and configure a nearby NAT
+
+## Internet Control Message Protocol
+
+- use of ICMP is for error reporting.
+- For example, when running a Telnet, FTP, or HTTP session,you may seen error message such as “Destination network unreachable.”
+- CMP messages have 
+    - type and a code field
+    - the header and the first 8 bytes of the IP datagram that caused the ICMP message to be generated in the
+first place (so that the sender can determine the datagram that caused the error).
+- ping program sends an ICMP type 8 code 0 message to the specified host.
+- **_source quench message_** : ts original purpose was to perform congestion control—
+to allow a congested router to send an ICMP source quench message to a host to
+force that host to reduce its transmission rate.
+- Traceroute is implemented with ICMP messages. To determine the names and addresses of the routers
+between source and destination
+
+![IMCP](img/networkLayer/ICMP.png)
+
+## IPv6
+
+![ipv6](img/networkLayer/ipv6.png)
+
+### ** how will public Internet, which is based on IPv4 transitioned to IPV6
+
+**dual-stack approach**
+
+![dualstack](img/networkLayer/dualstack.png)
+- where IPv6 nodes also have a complete IPv4 implementation.
+Such a node, referred to as an IPv6/IPv4 node
+- has the ability to send and receive both IPv4 and IPv6 datagrams
+- IPv6/IPv4 nodes must have both IPv6 and IPv4 addresses
+- DNS (see Chapter 2), which can
+return an IPv6 address if the node name being resolved is IPv6-capable, or other-
+wise return an IPv4 address.
+
+**tunneling**
+![tunnling](img/networkLayer/tunneling.png)
+
+## A brief Foray into IP Security
+
+- One of these protocols is IPsec, one of the more popular secure network-layer protocols and also widely deployed in Virtual Private Networks (VPNs)
+- if two hosts want to securely communicate, IPsec
+needs to be available only in those two hosts. All other routers and hosts can continue to run vanilla IPv4.
+- When two hosts have an IPsec session established between them, all TCP andUDP segments sent between them will be encrypted and authenticated
+- 
+
+**services provided by IPsec**
+- **Cryptographic agreement** Mechanisms that allow the two communicating hosts
+to agree on cryptographic algorithms and keys.
+- **Encryption of IP datagram payloads**. When the sending host receives a segment
+from the transport layer, IPsec encrypts the payload. The payload can only be
+decrypted by IPsec in the receiving host
+- **Data integrity** IPsec allows the receiving host to verify that the datagram’s
+header fields and encrypted payload were not modified while the datagram was
+en route from source to destination.
+- **Origin authentication** When a host receives an IPsec datagram from a trusted
+source, the host is assured that the source IP address in the datagram is the actual source of the datagram.
