@@ -89,7 +89,7 @@ ways to do switching(forwarding)
 - routing protocol
 - facility to report errors, ICMP
 
-_network layer packet is referred as datagram
+_network layer packet is referred as datagram_
 
 **syntax and semantics of IPv4 datagram format**
 
@@ -164,8 +164,7 @@ _**Protocol**_
 
 **drawback**
 - complicate routers and end system
-- can be used to create lethal DoS attacks, hacker send series of unexpected fragments eg:_Jolt2 attack_
--  
+- can be used to create lethal DoS attacks, hacker send series of unexpected fragments eg: _Jolt2 attack_
 
 ![fragmentation](img/networkLayer/fragmentation.png)
 
@@ -239,7 +238,6 @@ When a host sends a datagram with destination address 255.255.255.255, the messa
 - DHCP is a client server protocol
 - each subnet has a DHCP server.If no server present on the subnet
 - DHPC relay agent that knows the address of DHPC server
--  
 
 ![DHPC](img/networkLayer/DHPC.png)
 
@@ -342,7 +340,7 @@ between source and destination
 
 ![ipv6](img/networkLayer/ipv6.png)
 
-### ** how will public Internet, which is based on IPv4 transitioned to IPV6
+### ** how will public Internet, which is based on IPv4 transitioned to IPV6**
 
 **dual-stack approach**
 
@@ -351,8 +349,7 @@ between source and destination
 Such a node, referred to as an IPv6/IPv4 node
 - has the ability to send and receive both IPv4 and IPv6 datagrams
 - IPv6/IPv4 nodes must have both IPv6 and IPv4 addresses
-- DNS (see Chapter 2), which can
-return an IPv6 address if the node name being resolved is IPv6-capable, or other-
+- DNS which can return an IPv6 address if the node name being resolved is IPv6-capable, or other-
 wise return an IPv4 address.
 
 **tunneling**
@@ -364,7 +361,6 @@ wise return an IPv4 address.
 - if two hosts want to securely communicate, IPsec
 needs to be available only in those two hosts. All other routers and hosts can continue to run vanilla IPv4.
 - When two hosts have an IPsec session established between them, all TCP andUDP segments sent between them will be encrypted and authenticated
-- 
 
 **services provided by IPsec**
 - **Cryptographic agreement** Mechanisms that allow the two communicating hosts
