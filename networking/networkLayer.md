@@ -19,8 +19,8 @@ parent: Networking
 {:toc}
 </details>
 
-Switches - link layer devices
-Routes - network layer devices 
+**Switches** - link layer devices<br>
+**Routers** - network layer devices 
 Forwarding Table
 
 ## Forwarding table 
@@ -352,7 +352,7 @@ between source and destination
 
 ![ipv6](img/networkLayer/ipv6.png)
 
-### ** how will public Internet, which is based on IPv4 transitioned to IPV6**
+### **how will public Internet, which is based on IPv4 transitioned to IPV6**
 
 **dual-stack approach**
 
