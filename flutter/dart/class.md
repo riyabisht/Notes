@@ -6,6 +6,9 @@ parent: Dart
 
 # DArt
 
+1. TOC
+{:toc}
+
 ## Class
 
 - dart is object oriented programming with classes and mixin-based inheritance

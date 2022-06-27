@@ -6,6 +6,9 @@ parent: Dart
 
 # DArt
 
+1. TOC
+{:toc}
+
 ## importing libraries from packages
 
 To import libraries found in packages use `package:`

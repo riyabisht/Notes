@@ -8,6 +8,9 @@ parent: Dart
 
 ## Basics 
 
+1. TOC
+{:toc}
+
 * In Dart, you can define code outside of classes. Variables, functions, getters, and setters can all live outside of classes.
 * Dart doesn't have keywords for `public`, `private`, or `protected`.
 
