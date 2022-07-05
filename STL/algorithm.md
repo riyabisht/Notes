@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Commanly used build in algorithms
+title: algorithms function
 parent: STL
 ---
 # Comman function of algorithms
